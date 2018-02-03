@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- just to mess with git --->
   <title>TriCo Course Scheduler</title>
   <link rel="shortcut icon" href="./design/pic/tri.ico" />
   <meta charset="utf-8">
@@ -27,9 +26,15 @@
   <script src="./scripts/dhtmlxscheduler/ext/dhtmlxscheduler_serialize.js"></script>
   <!--<script src="./scripts/dhtmlxscheduler/responsive/dhtmlxscheduler-responsive.js"></script>
   <link rel="stylesheet" href="./scripts/dhtmlxscheduler/responsive/dhtmlxscheduler-responsive.css" type="text/css">-->
+  
+  <script src="./scripts/global_vars.js"></script>
+  <!-- Webservice -->
+  <script src="./scripts/webservice/selected_courses.js"></script>
+  <script src="./scripts/webservice/webservice.js"></script>
   <!-- My Scripts -->
   <script src="./scripts/components/selected_courses_list.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/main.js"></script>
   <script src="./scripts/fuse.min.js"></script>
   <!--Custom CSS!-->
   <link rel="stylesheet" href="./design/trico.css">
@@ -208,6 +213,7 @@
               <br>
               <h3>Selected courses</h3>
               <ul></ul>
+              <button id="btn-generator" onclick="submitCourses()" class="btn-success btn-lg">Generate schedule!</button>
             </div>
         </div>
       </div>

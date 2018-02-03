@@ -249,3 +249,8 @@ body {
 #selected-courses li {
   font-size: 1.2em;
 }
+
+#selected-courses button {
+  margin-left: 33%;
+  margin-top: 20px;
+}

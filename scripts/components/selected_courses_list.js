@@ -4,7 +4,7 @@
  * @param {*} course
  *   The course to add.
  */
-var addCourse = function(course) {
+var addCourseToList = function(course) {
   $('<li/>', {
     'id': course.Campus.toLowerCase() + '_' + course.CRN,
     'text': course['Registration ID'] + ' - ' + course['Course Title'],
@@ -19,7 +19,7 @@ var addCourse = function(course) {
  * @param {*} course
  *   The course to add.
  */
-var removeCourse = function(course) {
+var removeCourseFromList = function(course) {
   $('li#' + course.Campus.toLowerCase() + '_' + course.CRN).remove();
 
   updateCourseList();

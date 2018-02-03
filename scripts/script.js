@@ -521,6 +521,8 @@ function deleteEvent(course) {
   if (index > -1) {
     selected.splice(index, 1);
     // Removes the course from the list of selected courses.
+    removeCourseFromList(course);
+    // Remove course from the web service query.
     removeCourse(course);
     for(timeid in selectedId[idStub]) {
       scheduler.deleteEvent(selectedId[idStub][timeid])
@@ -548,6 +550,8 @@ function update(row) {
     }
     selected.push(course)
     // Add the course to the list of selected courses.
+    addCourseToList(course);
+    // Add course to the web service query.
     addCourse(course);
     index = courses[course["Campus"]][course["Semester"]].indexOf(course)
     if (index > -1) {
