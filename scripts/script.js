@@ -11,7 +11,6 @@ function main() {
   initializeScheduler()
   initializeJQuery()
   loadData()
-  console.log(courses);
   //Changes***
 }
 
@@ -409,7 +408,7 @@ function find(searchText, semester, campuses) {
 
 function search() {
   var table = document.getElementById("table");
-  var tableHeader = '<thead><tr><th style="text-align: center;">Course Name</th><th style="text-align: center;">Registration ID</th><th style="text-align: center;">Course Number</th><th style="text-align: center;">Time Offered</th><th style="text-align: center;">Instructor</th><th style="text-align: center;">Campus</th></tr></thead>'
+  var tableHeader = '<thead><tr><th>Course Name</th><th>Registration ID</th><th>Course Number</th><th>Time Offered</th><th>Instructor</th><th>Campus</th></tr></thead>'
   searchText = document.getElementById("search").value.trim() //.split(' ');
   //if nothing in searchText, shows all courses in given campus and semester
   semesterList = document.getElementById('semester').textContent.trim().split(' ');
@@ -517,10 +516,12 @@ function deleteEvent(course) {
   var semester = course["Semester"]
   var campus = course["Campus"]
   var idStub = semester + " " + campus + " " + course_number
-  courses[course["Campus"]][course["Semester"]].push(course)
+  // courses[course["Campus"]][course["Semester"]].push(course)
   index = selected.indexOf(course)
   if (index > -1) {
-    selected.splice(index, 1)
+    selected.splice(index, 1);
+    // Removes the course from the list of selected courses.
+    removeCourse(course);
     for(timeid in selectedId[idStub]) {
       scheduler.deleteEvent(selectedId[idStub][timeid])
     }
@@ -546,6 +547,8 @@ function update(row) {
         break;
     }
     selected.push(course)
+    // Add the course to the list of selected courses.
+    addCourse(course);
     index = courses[course["Campus"]][course["Semester"]].indexOf(course)
     if (index > -1) {
       courses[course["Campus"]][course["Semester"]].splice(index, 1)

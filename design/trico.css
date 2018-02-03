@@ -102,10 +102,17 @@ body {
   padding-bottom: 25px;
   padding-right: 1%;
   padding-left: 1%;
-  text-align: center;
   margin: 0 auto;
   left: 50%;
   top: 50%;
+}
+
+.campuses {
+  margin-top: 60px;
+}
+
+.results {
+  margin: 0;
 }
 
 .btn-swarthmore, .btn-swarthmore:focus {
@@ -221,4 +228,24 @@ body {
 .rowBMActive {
   background: #E8C91E;
   color: #F8F8F8;
+}
+
+#selected-courses {
+  padding-left: 5%;
+}
+
+#selected-courses .fa-frown {
+  display: inline-block;
+  font-size: 50px;
+  margin-left: 45%;
+  text-align: center;
+}
+
+#selected-courses h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#selected-courses li {
+  font-size: 1.2em;
 }
