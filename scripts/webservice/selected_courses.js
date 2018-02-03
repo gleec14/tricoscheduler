@@ -6,16 +6,12 @@ var addCourse = function(course) {
   var schoolId = getSchoolId(course.Campus);  
   var newCourse = schoolId + '_' + course.CRN;
   selectedCourses.push(newCourse);
-
-  console.log(selectedCourses);
 }
 
 var removeCourse = function(course) {
   var courseId = getSchoolId() + '_' + course.CRN;
   var index = selectedCourses.indexOf(courseId);
   selectedCourses.splice(index, 1);
-
-  console.log(selectedCourses);
 }
 
 var getSchoolId = function(school) {
